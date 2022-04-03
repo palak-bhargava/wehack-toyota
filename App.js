@@ -13,13 +13,24 @@ import {
 import Dashboard from './components/dashboard';
 import History from './components/history';
 import Feed from './components/feed';
+import Recording from './components/recording';
 
 import Frontdashcam from './components/frontdashcam';
 
-const App = () => {
-  return(
-    <Frontdashcam/>
-  );
-}
+import {createAppContainer} from 'react-navigation';
 
-export default App;
+import {createStackNavigator} from 'react-navigation-stack';
+
+const App = createStackNavigator({
+  Dashboard: {screen: Dashboard, navigationOptions: {headerShown: false}},
+   Feed: {screen: Feed, navigationOptions: {headerShown: false}},
+   History: {screen: History, navigationOptions: {headerShown: false}},
+   Frontdashcam: {screen: Frontdashcam, navigationOptions: {headerShown: false}},
+   Recording: {screen: Recording, navigationOptions: {headerShown: false}}
+},
+{
+  initialRoute: 'Dashboard'
+}
+);
+
+export default createAppContainer(App);

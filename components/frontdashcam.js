@@ -3,26 +3,33 @@ import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import Header from './header'
 import Video from 'react-native-video';
 
-const Frontdashcam = () => {
+function Frontdashcam({navigation}){
     return (
         <View>
             <Header/>
-            <View style = {{flexDirection: "row",marginLeft: 45, marginTop: "10%",}}>
-             
-                
-                {/* <Video source={{uri: "test1"}}   // Can be a URL or a local file.
-                ref={(ref) => {
-                    this.player = ref
-                }}                                      // Store reference
-                onBuffer={this.onBuffer}                // Callback when remote video is buffering
-                onError={this.videoError}               // Callback when video cannot be loaded
-                style={styles.backgroundVideo} /> */}
+            
+            <View style={{ flexDirection: "row", alignItems: "center", marginTop: 10 }}>
 
-               
-            <Text style = {styles.name}>
-                front dashcam
-            </Text>
-            </View>
+<TouchableOpacity  onPress={() => {
+                        navigation.navigate('Feed');
+                    }}>
+
+    <Image
+
+        style={styles.back_btn}
+
+        source={require('../assests/back_btn.png')}
+
+    />
+
+</TouchableOpacity>
+
+
+
+
+<Text style={styles.heading}>front dashcam</Text>
+
+</View>
             <View style={styles.dashcam_cont}>
                 <Image
                     style={styles.footage1}
@@ -115,7 +122,30 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         marginTop: "5%"
     },
-    
+    name: {
+        
+        fontSize: 32,
+        color: "black",
+        marginLeft: "5%",
+        marginTop: "-3%"
+    },
+    heading: {
+
+        fontSize: 33,
+
+        color: "black",
+
+        marginLeft: 20
+
+    },
+
+    back_btn: {
+
+        marginTop: 10,
+
+        marginLeft: 25
+
+    },
 });
 
 export default Frontdashcam;

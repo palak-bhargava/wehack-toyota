@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
 
 import Header from './header'
-const Recording = () => {
+function Recording({navigation}) {
     return (
         <View>
             <Header />
@@ -11,7 +11,11 @@ const Recording = () => {
             <ScrollView style={styles.scrollView}>
 
             <View style={{ flexDirection: "row", alignItems: "flex-start", marginTop: 15 }}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('History');
+                }}
+                >
                     <Image
                         style={styles.back_btn}
                         source={require('../assests/back_btn.png')}    

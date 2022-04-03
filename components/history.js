@@ -15,7 +15,7 @@ const getWarning = (image) => {
                 break;
         }
 }
-const History = () => {
+function History({navigation}){
     return (
         
         <ScrollView>
@@ -23,7 +23,9 @@ const History = () => {
             <Header/>
 
             <View style = {{flexDirection: "row",marginLeft: 45, marginTop: "10%",}}>
-                <TouchableOpacity>
+                <TouchableOpacity  onPress={() => {
+                    navigation.navigate('Dashboard');
+                }} >
                 <Image
                 source={require('../assests/back_btn.png')}></Image>
                 </TouchableOpacity>
@@ -65,7 +67,9 @@ const History = () => {
            </TouchableOpacity>
             
 
-           <TouchableOpacity>
+           <TouchableOpacity onPress={() => {
+                    navigation.navigate('Recording');
+                }}>
            <View style = {styles.list_item}>
                
                <View style= {{marginLeft:"5%"}}>
