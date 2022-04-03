@@ -6,14 +6,16 @@ const Feed = () => {
     return (
         <View>
             <Header />
-            <TouchableOpacity>
-                <Image
-                    style={styles.back_btn}
-                    source={require('../assests/back_btn.png')}
-                />
-            </TouchableOpacity>
+            <View style={{flexDirection: "row", alignItems: "center", marginTop: 10}}>
+                <TouchableOpacity>
+                    <Image
+                        style={styles.back_btn}
+                        source={require('../assests/back_btn.png')}
+                    />
+                </TouchableOpacity>
 
-            <Text style={styles.heading}>current feeds</Text>
+                <Text style={styles.heading}>current feeds</Text>
+            </View>
 
             <View style={styles.dashcam_cont}>
                 <Text style={{ fontSize: 20, color: "black", marginTop: 20, marginLeft: 30 }}>front dashcam</Text>
@@ -31,7 +33,7 @@ const Feed = () => {
                 />
                 <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
                     <Image
-                        style={{width: 25, height: 27, marginTop: 10}}
+                        style={{ width: 25, height: 27, marginTop: 10 }}
                         source={require('../assests/off_btn.png')}
                     />
                     <Text style={{ fontSize: 17, color: "black", marginTop: 10, marginLeft: 15 }}>powered on to record</Text>
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
     heading: {
         fontSize: 33,
         color: "black",
-        marginLeft: 50
+        marginLeft: 20
     },
     back_btn: {
         marginTop: 10,

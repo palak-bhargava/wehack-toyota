@@ -13,10 +13,11 @@ import {
 import Dashboard from './components/dashboard';
 import History from './components/history';
 import Feed from './components/feed';
+import FrontDashcam from './components/front_dashcam';
 
 const App = () => {
   return(
-    <Dashboard/>
+    <FrontDashcam/>
   );
 }
 
