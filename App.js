@@ -13,11 +13,12 @@ import {
 import Dashboard from './components/dashboard';
 import History from './components/history';
 import Feed from './components/feed';
-import Recording from './components/recording';
+
+import Frontdashcam from './components/frontdashcam';
 
 const App = () => {
   return(
-    <Feed/>
+    <Frontdashcam/>
   );
 }
 
