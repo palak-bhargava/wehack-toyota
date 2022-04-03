@@ -7,7 +7,7 @@ const Dashboard = () => {
         <View>
             <Header />
             <Text style={styles.name}>
-                hi Nhi!
+                Hi, Nhi!
             </Text>
             <Text style={styles.lgp}>
                 let's go places
@@ -17,7 +17,7 @@ const Dashboard = () => {
                     <Image
                         source={require('../assests/db1.png')}
                     />
-                    <Text style={styles.text1}>your dashcam</Text>
+                    <Text style={styles.text1}>recordings</Text>
                 </View>
 
                 <View style={styles.container2}>
@@ -42,8 +42,10 @@ const Dashboard = () => {
                     <Text style={{fontSize:17, color: "black"}}>Current Feeds</Text>
                 </View>
                 <View style={styles.help_cont}>
-                    <Text style={{fontSize:25, color: "white", fontWeight: "bold", paddingBottom:7}}>HELP</Text>
-                    <Text style={{fontSize:17, color: "white"}}>share feed with local authorities</Text>
+                    <Image
+                        source={require('../assests/settings_btn.png')}
+                    />
+                    <Text style={{fontSize:17, paddingTop: 10, color: "black"}}>Settings</Text>
                 </View>
             </View>
 
@@ -52,7 +54,7 @@ const Dashboard = () => {
                     <Text style={{fontSize:17, color: "black"}}>battery</Text>
                     <Image
                             source={require('../assests/battery.png')}
-                        />
+                    />
                 </View>
                 <View style={{marginRight: 110, marginLeft: 40, marginTop: 10, alignItems: "center"}}>
                     <Text style={{fontSize:50, color: "black"}}>75</Text>
@@ -85,7 +87,7 @@ const styles = StyleSheet.create({
     },
     lgp: {
         marginLeft: 45,
-        marginTop: 7,
+        marginTop: 5,
         fontSize: 17,
         color: "black",
     },
@@ -104,7 +106,7 @@ const styles = StyleSheet.create({
     container2: {
         flexDirection: "row",
         marginTop: 10,
-        marginLeft: 37,
+        marginLeft: 35,
         marginRight: 25,
         alignItems: "center"
     },
@@ -133,7 +135,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     help_cont: {
-        backgroundColor: 'rgba(215, 25, 33, 0.70)',
+        backgroundColor: 'rgba(88, 88, 91, 0.13)',
         width: 140,
         height: 110,
         borderRadius: 19,
