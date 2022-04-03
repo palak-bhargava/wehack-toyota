@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
 import Header from './header'
-const Dashboard = () => {
+function Dashboard({ navigation }) {
     return (
         <View>
             <Header />
@@ -13,12 +13,20 @@ const Dashboard = () => {
                 let's go places
             </Text>
             <View style={styles.your_dashcam}>
-                <View style={styles.container1}>
-                    <Image
-                        source={require('../assests/db1.png')}
-                    />
-                    <Text style={styles.text1}>recordings</Text>
-                </View>
+                <TouchableOpacity
+                onPress={() => {
+                    navigation.navigate('History');
+                }}
+
+                >
+                    <View style={styles.container1}>
+                        <Image
+                            source={require('../assests/db1.png')}
+                        />
+                        <Text style={styles.text1}>recordings</Text>
+                    </View>
+                </TouchableOpacity>
+
 
                 <View style={styles.container2}>
                     <Image
@@ -35,34 +43,41 @@ const Dashboard = () => {
             </View>
 
             <View style={styles.middle_container}>
-                <View style={styles.feed_cont}>
-                    <Image
-                        source={require('../assests/feed.png')}
-                    />
-                    <Text style={{fontSize:17, color: "black"}}>Current Feeds</Text>
-                </View>
+                <TouchableOpacity
+                    onPress={() => {
+                        navigation.navigate('Feed');
+                    }}
+
+                >
+                    <View style={styles.feed_cont}>
+                        <Image
+                            source={require('../assests/feed.png')}
+                        />
+                        <Text style={{ fontSize: 17, color: "black" }}>Current Feeds</Text>
+                    </View>
+                </TouchableOpacity>
                 <View style={styles.help_cont}>
                     <Image
                         source={require('../assests/settings_btn.png')}
                     />
-                    <Text style={{fontSize:17, paddingTop: 10, color: "black"}}>Settings</Text>
+                    <Text style={{ fontSize: 17, paddingTop: 10, color: "black" }}>Settings</Text>
                 </View>
             </View>
 
             <View style={styles.battery_cont}>
-                <View style={{marginLeft: 35, marginTop: 10, alignItems: "center"}}>
-                    <Text style={{fontSize:17, color: "black"}}>battery</Text>
+                <View style={{ marginLeft: 35, marginTop: 10, alignItems: "center" }}>
+                    <Text style={{ fontSize: 17, color: "black" }}>battery</Text>
                     <Image
-                            source={require('../assests/battery.png')}
+                        source={require('../assests/battery.png')}
                     />
                 </View>
-                <View style={{marginRight: 110, marginLeft: 40, marginTop: 10, alignItems: "center"}}>
-                    <Text style={{fontSize:50, color: "black"}}>75</Text>
-                    <Text style={{textAlign:"center", fontSize:17, color: "black"}}>hours of off-vehicle use remaining</Text>
+                <View style={{ marginRight: 110, marginLeft: 40, marginTop: 10, alignItems: "center" }}>
+                    <Text style={{ fontSize: 50, color: "black" }}>75</Text>
+                    <Text style={{ textAlign: "center", fontSize: 17, color: "black" }}>hours of off-vehicle use remaining</Text>
                 </View>
-                
+
             </View>
-            
+
         </View>
     );
 }
@@ -119,12 +134,12 @@ const styles = StyleSheet.create({
         height: 27,
         width: 30,
     },
-    middle_container:{
+    middle_container: {
         flexDirection: "row",
         marginTop: 50,
         margin: 30,
     },
-    feed_cont:{
+    feed_cont: {
         backgroundColor: 'rgba(88, 88, 91, 0.13)',
         width: 140,
         height: 110,
