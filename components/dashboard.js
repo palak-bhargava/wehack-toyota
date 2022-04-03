@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 import Header from './header'
-const Dashboard = () => {
+function Dashboard({navigation}) {
     return (
         <View>
             <Header />
@@ -12,13 +12,22 @@ const Dashboard = () => {
             <Text style={styles.lgp}>
                 let's go places
             </Text>
+            
+
             <View style={styles.your_dashcam}>
-                <View style={styles.container1}>
-                    <Image
-                        source={require('../assests/db1.png')}
-                    />
-                    <Text style={styles.text1}>recordings</Text>
-                </View>
+            <TouchableOpacity
+                onPress={() => {
+                    navigation.navigate('History');
+                }}
+
+                >
+                    <View style={styles.container1}>
+                        <Image
+                            source={require('../assests/db1.png')}
+                        />
+                        <Text style={styles.text1}>recordings</Text>
+                    </View>
+                </TouchableOpacity>
 
                 <View style={styles.container2}>
                     <Image
@@ -35,12 +44,20 @@ const Dashboard = () => {
             </View>
 
             <View style={styles.middle_container}>
-                <View style={styles.feed_cont}>
-                    <Image
-                        source={require('../assests/feed.png')}
-                    />
-                    <Text style={{fontSize:17, color: "black"}}>Current Feeds</Text>
-                </View>
+
+            <TouchableOpacity
+                    onPress={() => {
+                        navigation.navigate('Feed');
+                    }}
+
+                >
+                    <View style={styles.feed_cont}>
+                        <Image
+                            source={require('../assests/feed.png')}
+                        />
+                        <Text style={{ fontSize: 17, color: "black" }}>Current Feeds</Text>
+                    </View>
+                </TouchableOpacity>
                 <View style={styles.help_cont}>
                     <Image
                         source={require('../assests/settings_btn.png')}

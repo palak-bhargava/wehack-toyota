@@ -2,11 +2,14 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 import Header from './header'
-const Feed = () => {
+function Feed({navigation}){
     return (
         <View>
             <Header />
-            <TouchableOpacity>
+            <TouchableOpacity
+            onPress={() => {
+                navigation.navigate('Dashboard');
+            }}>
                 <Image
                     style={styles.back_btn}
                     source={require('../assests/back_btn.png')}
@@ -15,6 +18,9 @@ const Feed = () => {
 
             <Text style={styles.heading}>current feeds</Text>
 
+           <TouchableOpacity onPress={() => {
+                    navigation.navigate('Frontdashcam');
+                }}>
             <View style={styles.dashcam_cont}>
                 <Text style={{ fontSize: 20, color: "black", marginTop: 20, marginLeft: 30 }}>front dashcam</Text>
                 <Image
@@ -23,6 +29,7 @@ const Feed = () => {
                 />
                 <Text style={{ fontSize: 17, color: "black", marginTop: 10, marginLeft: 25 }}>powered on by: forward left sensor</Text>
             </View>
+            </TouchableOpacity>
             <View style={styles.dashcam_cont}>
                 <Text style={{ fontSize: 20, color: "black", marginTop: 20, marginLeft: 30 }}>back camera</Text>
                 <Image
