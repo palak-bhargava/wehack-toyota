@@ -34,7 +34,7 @@ const Feed = () => {
                         style={{width: 25, height: 27, marginTop: 10}}
                         source={require('../assests/off_btn.png')}
                     />
-                    <Text style={{ fontSize: 17, color: "black", marginTop: 10, marginLeft: 15 }}>powered on to record</Text>
+                    <Text style={{ fontSize: 17, color: "black", marginTop: 10, marginLeft: 15 }}>power on and record</Text>
                 </View>
 
             </View>

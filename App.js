@@ -13,6 +13,7 @@ import {
 import Dashboard from './components/dashboard';
 import History from './components/history';
 import Feed from './components/feed';
+
 import Frontdashcam from './components/frontdashcam';
 
 const App = () => {
